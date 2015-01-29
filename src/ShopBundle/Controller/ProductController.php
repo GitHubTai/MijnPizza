@@ -30,7 +30,7 @@ class ProductController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('ShopBundle:Product')->findAll();
-
+       
         return array(
             'entities' => $entities,
         );
@@ -45,6 +45,7 @@ class ProductController extends Controller
     public function createAction(Request $request)
     {
         $entity = new Product();
+        
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 

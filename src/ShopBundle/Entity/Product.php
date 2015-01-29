@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="ShopBundle\Entity\ProductRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Product
 {
@@ -48,6 +49,14 @@ class Product
      * @ORM\Column(name="productDescription", type="string", length=255)
      */
     private $productDescription;
+
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="created", type="datetime")
+     */
+    private $created;
 
 
     /**
@@ -151,4 +160,32 @@ class Product
     {
         return $this->productDescription;
     }
+
+     /**
+     * Set created
+     *
+     * @ORM\PrePersist
+     * @param \DateTime $created
+     * @return Product 
+     */
+    public function setCreated()
+    {
+        if(!isset($this->created))
+        $this->created = new \DateTime();
+
+        return $this;
+    }
+
+        /**
+     * Get created
+     *
+     * @return \DateTime 
+     */
+    public function getCreated()
+    {
+       
+        return $this->created;
+    }
+
+
 }
