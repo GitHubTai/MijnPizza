@@ -61,18 +61,6 @@ class PizzaOrder
     private $orderInfo;
 
 
-
-     /**
-     * @ORM\OneToMany(targetEntity="items_ordered", mappedBy="PizzaOrder")
-     */
-    private $itemsOrdered;
-
-    public function __construct()
-    {
-        $this->itemsOrdered = new ArrayCollection();
-    }
-
-
     /**
      * Get id
      *

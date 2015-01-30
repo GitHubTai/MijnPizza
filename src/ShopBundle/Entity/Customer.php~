@@ -57,6 +57,12 @@ class Customer
      */
     private $houseAdd;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="phoneNumber", type="string", length=20)
+     */
+    private $phoneNumber;
 
     /**
      * @var string
@@ -71,9 +77,6 @@ class Customer
      * @ORM\Column(name="user_id", type="integer")
      */
     private $userId;
-
-
-
 
     /**
      * @ORM\OneToMany(targetEntity="PizzaOrder", mappedBy="customer")
@@ -211,7 +214,29 @@ class Customer
         return $this->houseAdd;
     }
 
-    
+    /**
+     * Set phoneNumber
+     *
+     * @param string $phoneNumber
+     * @return Customer
+     */
+    public function setPhoneNumber($phoneNumber)
+    {
+        $this->phoneNumber = $phoneNumber;
+
+        return $this;
+    }
+
+    /**
+     * Get phoneNumber
+     *
+     * @return string 
+     */
+    public function getPhoneNumber()
+    {
+        return $this->phoneNumber;
+    }
+
     /**
      * Set email
      *
@@ -256,38 +281,5 @@ class Customer
     public function getUserId()
     {
         return $this->userId;
-    }
-
-    /**
-     * Add pizzaOrder
-     *
-     * @param \ShopBundle\Entity\PizzaOrder $pizzaOrder
-     * @return Customer
-     */
-    public function addPizzaOrder(\ShopBundle\Entity\PizzaOrder $pizzaOrder)
-    {
-        $this->pizzaOrder[] = $pizzaOrder;
-
-        return $this;
-    }
-
-    /**
-     * Remove pizzaOrder
-     *
-     * @param \ShopBundle\Entity\PizzaOrder $pizzaOrder
-     */
-    public function removePizzaOrder(\ShopBundle\Entity\PizzaOrder $pizzaOrder)
-    {
-        $this->pizzaOrder->removeElement($pizzaOrder);
-    }
-
-    /**
-     * Get pizzaOrder
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getPizzaOrder()
-    {
-        return $this->pizzaOrder;
     }
 }
