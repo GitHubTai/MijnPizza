@@ -9,8 +9,15 @@
                 <th>Id</th>
                 <th>Username</th>
                 <th>Password</th>
-                <th>Passwordsalt</th>
                 <th>Joined</th>
+                <th>Firstname</th>
+                <th>Lastnam</th>
+                <th>Address</th>
+                <th>Housenr</th>
+                <th>Houseadd</th>
+                <th>Phonenumber</th>
+                <th>Email</th>
+                <th>Countorders</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -18,10 +25,22 @@
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('user_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.userName }}</td>
-                <td>{{ entity.passWord }}</td>
-                <td>{{ entity.passwordSalt }}</td>
+                <td>{{ entity.username }}</td>
+                <td>{{ entity.password }}</td>
+                 {#
                 <td>{% if entity.joined %}{{ entity.joined|date('Y-m-d H:i:s') }}{% endif %}</td>
+                #}
+
+                <td>{{ entity.firstname }}</td>
+                <td>{{ entity.lastnam }}</td>
+                <td>{{ entity.address }}</td>
+                <td>{{ entity.housenr }}</td>
+                <td>{{ entity.houseadd }}</td>
+                <td>{{ entity.phonenumber }}</td>
+                <td>{{ entity.email }}</td>
+                {#
+                <td>{{ entity.countorders }}</td>
+                #}
                 <td>
                 <ul>
                     <li>
@@ -42,6 +61,14 @@
             <a href="{{ path('user_new') }}">
                 Create a new entry
             </a>
+
+            {#
+            <a href="{{ path('/logout') }}">
+                Logout
+            </a>
+            #}
+
+            
         </li>
     </ul>
     {% endblock %}

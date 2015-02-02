@@ -34,8 +34,8 @@ class PizzaOrder
     /**
      * @var integer
      *
-     * @ORM\ManyToOne(targetEntity="Customer", inversedBy="pizzaOrder")
-     * @ORM\JoinColumn(name="customer_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="pizzaOrder")
+     * @ORM\JoinColumn(name="id", referencedColumnName="id")
      */
     private $customer;
 

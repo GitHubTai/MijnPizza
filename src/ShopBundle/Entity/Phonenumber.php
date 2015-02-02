@@ -33,8 +33,8 @@ class Phonenumber
    /**
      * @var integer
      *
-     * @ORM\ManyToOne(targetEntity="Customer", inversedBy="Phonenumber")
-     * @ORM\JoinColumn(name="customer_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="Phonenumber")
+     * @ORM\JoinColumn(name="id", referencedColumnName="id")
      */
     private $customer;
 
