@@ -1,7 +1,16 @@
-{# app/Resources/views/security/login.html.twig #}
-{# ... you will probably extends your base template, like base.html.twig #}
+{% extends 'ShopBundle::base.html.twig' %}
+    
+{% block title %}Login{% endblock %}
 
-{% if error %}
+
+
+{% block inhoud %}
+
+	<!--==============================content================================-->
+    <section id="content"><div class="ic">More Website Templates @ TemplateMonster.com - January 23, 2012!</div>
+        <div class="main">
+            <div class="container">
+            	{% if error %}
 
        // <div>{{ error.messageKey|trans(error.messageData) }}</div>
     <div>{{ error.message }}</div>
@@ -9,16 +18,16 @@
 
 {% endif %}
 
-<h1> Welcome to PizzaTai, please login</h1>
+<h1> Meld je hier aan om te bestellen: &nbsp;&nbsp; </h1>
 
 <form action="{{ path('login_check') }}" method="post">
-    <label for="username">Username:</label>
+    <label for="username">Gebruikersnaam:</label>
     <input type="text" id="username" name="_username" " /> 
     
     {# removed value="{{ last_username }} #}
 
     
-    <label for="password">Password:</label>
+    <label for="password">Wachtwoord:</label>
     <input type="password" id="password" name="_password" />
 
     {#
@@ -29,3 +38,14 @@
 
     <button type="submit">login</button>
 </form>
+
+    <figure><img src="{{ asset('images/delivguy.jpeg') }}" alt=""></a></figure>
+
+                
+            </div>
+        </div>
+    </section>
+    
+
+{% endblock %}
+

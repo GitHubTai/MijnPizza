@@ -1,47 +1,38 @@
-{% extends '::base.html.twig' %}
 
-{% block body -%}
-    <h1>Product list</h1>
+{% extends 'ShopBundle::base.html.twig' %}
 
-    <table class="records_list">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Productname</th>
-                <th>Productprice</th>
-                <th>Productpic</th>
-                <th>Productdescription</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('product_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.productName }}</td>
-                <td>{{ entity.productPrice }}</td>
-                <td>{{ entity.productPic }}</td>
-                <td>{{ entity.productDescription }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('product_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('product_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
 
-        <ul>
-        <li>
-            <a href="{{ path('product_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
+
+{% block inhoud %}
+	<!--==============================content================================-->
+    <section id="content"><div class="ic">More Website Templates @ TemplateMonster.com - January 23, 2012!</div>
+        <div class="main">
+            <div class="container">
+            	<h3 class="prev-indent-bot">Onze pizza's, gratis geleverd in regio Antwerpen</h3>
+                <div >
+
+                {% for entity in entities %}
+                	<div>
+                    	<div class="p4">
+                            <figure><a class="lightbox-image" href="images/slider-img1.jpg" data-gal="prettyPhoto[prettyPhoto]"><img src="{{ asset('images/pizzadummie.jpeg') }}" alt=""></a></figure>
+                            <h5>{{ entity.productName }} </h5>
+                            <p class="p1">{{ entity.productDescription }}</p>
+                            <p class="p2"><strong class="color-2">Prijs: €{{ entity.productPrice }}</strong></p>
+                            <a class="button-1" href="#">Bestel</a>
+                        </div>
+                 
+
+                        <!--
+                        
+                        <figure><a class="lightbox-image" href="images/slider-img2.jpg" data-gal="prettyPhoto[prettyPhoto]"><img src="{{ asset('images/page3-img5.jpg') }}" alt=""></a></figure>
+                        <h5>Nam liber tempor cusoluta </h5>
+                        <p class="p1">Nobis eleifend option congue nihil imperdiet doming quod mazim plac<br>erat facer possim.</p>
+                        <p class="p2"><strong class="color-2">Price: $12.95</strong></p>
+                        <a class="button-1" href="#">Add to Cart</a>
+                        -->
+                    </div>
+                    {% endfor %}
+
+  {% endblock %}
+
+                  
