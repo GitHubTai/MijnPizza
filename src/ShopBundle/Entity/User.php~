@@ -238,7 +238,7 @@ class User implements UserInterface
     }
 
     /**
-     * Get joined
+     * Get [3~[3~[3~[3~joined
      *
      * @return \DateTime 
      */
@@ -429,29 +429,5 @@ class User implements UserInterface
     public function getCountorders()
     {
         return $this->countorders;
-    }
-
-
-    /**
-     * Set isActive
-     *
-     * @param boolean $isActive
-     * @return User
-     */
-    public function setIsActive($isActive)
-    {
-        $this->isActive = $isActive;
-
-        return $this;
-    }
-
-    /**
-     * Get isActive
-     *
-     * @return boolean 
-     */
-    public function getIsActive()
-    {
-        return $this->isActive;
     }
 }
