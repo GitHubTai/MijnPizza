@@ -8,6 +8,13 @@ product:
     type: annotation
 
 
+
+
+addtocart:
+    path: /addtocart/{id}
+    defaults: { _controller: ShopBundle:Cart:addtocart }
+
+
 login:
     path: /login
     defaults: { _controller: ShopBundle:Security:login }
@@ -17,3 +24,4 @@ login_check:
 
 logout:
     path: /logout
+

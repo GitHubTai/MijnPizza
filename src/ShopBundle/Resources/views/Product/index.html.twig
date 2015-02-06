@@ -4,22 +4,29 @@
 
 
 {% block inhoud %}
+
+
 	<!--==============================content================================-->
-    <section id="content"><div class="ic">More Website Templates @ TemplateMonster.com - January 23, 2012!</div>
+    <section id="content"><div class="ic"></div>
         <div class="main">
             <div class="container">
+            <img align="center" src="{{ asset('images/unitedpizza.jpeg') }}" alt="">
             	<h3 class="prev-indent-bot">Onze pizza's, gratis geleverd in regio Antwerpen</h3>
                 <div >
 
                 {% for entity in entities %}
                 	<div>
+                            <!--<form action="{{ path('addtocart', { 'id' : entity.id }) }}" method="get"> -->
                     	<div class="p4">
-                            <figure><a class="lightbox-image" href="images/slider-img1.jpg" data-gal="prettyPhoto[prettyPhoto]"><img src="{{ asset('images/pizzadummie.jpeg') }}" alt=""></a></figure>
+                            <figure><a><img src="{{ asset('images/pizzadummie.jpeg') }}" alt=""></a></figure>
                             <h5>{{ entity.productName }} </h5>
                             <p class="p1">{{ entity.productDescription }}</p>
                             <p class="p2"><strong class="color-2">Prijs: €{{ entity.productPrice }}</strong></p>
-                            <a class="button-1" href="#">Bestel</a>
-                        </div>
+
+                            <a class="button-1" href="{{ path('addtocart', {'id' :  entity.id }) }}">Bestel deze pizza</a>
+
+                         </div>
+                            <!--  </form> -->
                  
 
                         <!--
@@ -28,7 +35,7 @@
                         <h5>Nam liber tempor cusoluta </h5>
                         <p class="p1">Nobis eleifend option congue nihil imperdiet doming quod mazim plac<br>erat facer possim.</p>
                         <p class="p2"><strong class="color-2">Price: $12.95</strong></p>
-                        <a class="button-1" href="#">Add to Cart</a>
+                        <a class="button-1" href="">Add to Cart</a>
                         -->
                     </div>
                     {% endfor %}
