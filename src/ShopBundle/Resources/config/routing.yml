@@ -8,11 +8,14 @@ product:
     type: annotation
 
 
+cart:
+    path: /cart
+    defaults: { _controller: ShopBundle:Cart:index }
 
 
 addtocart:
     path: /addtocart/{id}
-    defaults: { _controller: ShopBundle:Cart:addtocart }
+    defaults: { _controller: ShopBundle:Cart:add }
 
 
 login:

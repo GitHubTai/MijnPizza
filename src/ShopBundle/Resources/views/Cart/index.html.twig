@@ -1,0 +1,36 @@
+{% extends "ShopBundle::base.html.twig" %}
+
+
+
+{% block title %}Symfony2 store demo{% endblock %}
+
+
+
+{% block inhoud %}
+
+<div id="shopping_cart">
+  
+
+ <!-- 
+  <div id="product_list">
+    {% for product in products %}
+      <a title="Add this item" href="{{ path('addtocart', {'id': product.id}) }}" style="display:inline-block">
+        <h3>{{ product.productname }}</h3><br>
+      </a>
+    {% endfor %}
+  </div>
+   -->
+  <h2>Your Pizza Shoppping Cart:</h2>
+
+
+
+
+  <div id="cart" class="cart">
+    <div id="items">
+      {% include 'ShopBundle:Cart:cart.html.twig' with {'cart': cart, 'products': products} %}
+    </div>
+    <div style="clear: both"></div>
+  </div>
+
+</div>
+{% endblock %}
